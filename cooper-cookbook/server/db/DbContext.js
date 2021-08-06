@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { Recipe as RecipeSchema } from '../models/Recipe'
+import { RecipeSchema } from '../models/Recipe'
 import { AccountSchema } from '../models/Account'
 
 class DbContext {
