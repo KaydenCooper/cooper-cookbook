@@ -39,9 +39,9 @@ export class RecipesController extends BaseController {
   async create(req, res, next) {
     try {
       // NOTE NEVER TRUST THE CLIENT TO ADD THE CREATOR ID
-      req.body.creatorId = req.userInfo.id
-      const newRecipe = await recipesService.create(req.body)
-      res.send(newRecipe)
+      req.body.creatorId = req.account.id
+      const data = await recipesService.create(req.body)
+      res.send(data)
     } catch (error) {
       next(error)
     }
@@ -58,7 +58,7 @@ export class RecipesController extends BaseController {
 
   async edit(req, res, next) {
     try {
-      const recipe = await recipesService.edit(req.params.id)
+      const recipe = await recipesService.edit(req.params.id, req.body)
       res.send({ data: recipe, message: 'changed' })
     } catch (error) {
       next(error)

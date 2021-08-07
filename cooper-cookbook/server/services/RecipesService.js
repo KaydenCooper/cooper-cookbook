@@ -21,8 +21,8 @@ class RecipesService {
     return await dbContext.Recipes.findByIdAndDelete(id)
   }
 
-  async edit(id) {
-    return await dbContext.Recipes.findByIdAndUpdate(id)
+  async edit(id, body) {
+    return await dbContext.Recipes.findByIdAndUpdate(id, body)
   }
 
   async find(query = {}) {
