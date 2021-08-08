@@ -24,6 +24,12 @@
           </router-link>
         </li>
       </ul>
+      <form class="form-inline mr-4">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
       <span class="navbar-text">
         <button
           class="btn btn-outline-primary text-uppercase"
