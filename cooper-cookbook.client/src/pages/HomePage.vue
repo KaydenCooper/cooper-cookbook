@@ -6,50 +6,110 @@
         - Est. 1942 -
       </h1>
     </div>
-    <div class="col-12 mt-md-4 mt-2 ">
-      <button class="btn btn-dark btn-lg m-3 p-4 shadow">
-        + Add Recipe
-      </button>
-      <button class="btn btn-dark btn-lg m-3 p-4 shadow"
+    <div class="col-12 mt-md-4 mt-5 ">
+      <button class="btn btn-dark btn-lg m-3 px-4 py-2 shadow"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseExample"
+              data-target="#collapseAdd"
               aria-expanded="false"
-              aria-controls="collapseExample"
+              aria-controls="collapseAdd"
+      >
+        + Add Recipe
+      </button>
+      <button class="btn btn-dark btn-lg m-3 px-4 py-2  shadow"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseCategory"
+              aria-expanded="false"
+              aria-controls="collapseCategory"
       >
         Categories
       </button>
-      <button class="btn btn-dark btn-lg m-3 p-4 shadow">
+      <button class="btn btn-dark btn-lg m-3 px-4 py-2  shadow">
         All Recipes
       </button>
     </div>
-    <div class="col-12 title collapse" id="collapseExample">
+    <div class="col-12 title collapse" id="collapseCategory">
       <p class="mb-0">
         <u>CATEGORIES</u>
       </p>
     </div>
     <categories
       class="collapse"
-      id="collapseExample"
+      id="collapseCategory"
       v-for="category in categories"
       :key="category.id"
       :category="category"
     />
+    <recipe
+      class="collapse"
+      id="collapseRecipe"
+      v-for="recipe in recipes"
+      :key="recipe.id"
+      :recipe="recipe"
+    />
+    <form
+      class="collapse col-10 col-md-6 card shadow bg-dark p-4 m-3"
+      id="collapseAdd"
+    >
+      <div class="form-group">
+        <label for="inputTitle">Recipe Title</label>
+        <input v-model="Appstate.recipe.title" type="text" class="form-control" id="inputText" placeholder="Recipe Title...">
+      </div>
+      <div class="form-group">
+        <label for="createdBy">Created By:</label>
+        <input v-model="Appstate.recipe.createdBy" type="text" class="form-control" id="createdBy" placeholder="Created By...">
+      </div>
+      <div class="form-group">
+        <label for="CategorySelect">Category</label>
+        <select v-model="Appstate.recipe.category" id="CategorySelect" class="form-control">
+          <option selected>
+            Choose Category...
+          </option>
+          <option v-for="category in categories"
+                  :key="category.id"
+                  :value="category"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputIngredient">Ingredients</label>
+        <textarea v-model="Appstate.recipe.ingredients" class="form-control" id="inputIngredient" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="inputDirections">Directions</label>
+        <textarea v-model="Appstate.recipe.directions" class="form-control" id="inputDirections" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Submit Recipe
+      </button>
+    </form>
   </div>
 </template>
 
 <script>
 import Categories from '../components/Categories.vue'
+import Recipe from '../components/Recipe.vue'
+// import recipeService from '../services/RecipeService'
 import { AppState } from '../AppState'
 import { computed } from 'vue'
 export default {
   name: 'Home',
   setup() {
     return {
-      categories: computed(() => AppState.categories)
+      AppState,
+      categories: computed(() => AppState.categories),
+      recipe: computed(() => AppState.recipe)
+
+      // async newRecipe() {
+      //   await recipeService.create(AppState.recipe)
+      //   this.form.reset()
+      // }
     }
   },
-  components: { Categories }
+  components: { Categories, Recipe }
 }
 </script>
 

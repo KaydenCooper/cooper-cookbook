@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 export const AppState = reactive({
   user: {},
   account: {},
+  recipe: {},
   categories: [
     {
       url: '../src/assets/img/appetizer.jpg',
