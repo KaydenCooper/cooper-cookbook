@@ -54,15 +54,15 @@
     >
       <div class="form-group">
         <label for="inputTitle">Recipe Title</label>
-        <input v-model="Appstate.recipe.title" type="text" class="form-control" id="inputText" placeholder="Recipe Title...">
+        <input type="text" class="form-control" id="inputText" placeholder="Recipe Title...">
       </div>
       <div class="form-group">
         <label for="createdBy">Created By:</label>
-        <input v-model="Appstate.recipe.createdBy" type="text" class="form-control" id="createdBy" placeholder="Created By...">
+        <input type="text" class="form-control" id="createdBy" placeholder="Created By...">
       </div>
       <div class="form-group">
         <label for="CategorySelect">Category</label>
-        <select v-model="Appstate.recipe.category" id="CategorySelect" class="form-control">
+        <select id="CategorySelect" class="form-control">
           <option selected>
             Choose Category...
           </option>
@@ -76,11 +76,11 @@
       </div>
       <div class="form-group">
         <label for="inputIngredient">Ingredients</label>
-        <textarea v-model="Appstate.recipe.ingredients" class="form-control" id="inputIngredient" rows="3"></textarea>
+        <textarea class="form-control" id="inputIngredient" rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="inputDirections">Directions</label>
-        <textarea v-model="Appstate.recipe.directions" class="form-control" id="inputDirections" rows="3"></textarea>
+        <textarea class="form-control" id="inputDirections" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">
         Submit Recipe
