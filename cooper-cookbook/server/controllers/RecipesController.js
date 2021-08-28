@@ -30,7 +30,7 @@ export class RecipesController extends BaseController {
   async getAll(req, res, next) {
     try {
       const recipes = await recipesService.find(req.query)
-      return res.send({ data: recipes, message: 'got the recipes' })
+      return res.send({ data: recipes })
     } catch (error) {
       next(error)
     }

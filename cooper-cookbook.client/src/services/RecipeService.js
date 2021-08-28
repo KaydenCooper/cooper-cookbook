@@ -5,8 +5,8 @@ import { api } from './AxiosService'
 class RecipeService {
   async getAll() {
     try {
-      const res = await api.get('/recipes')
-      AppState.recipe = res.data
+      const res = await api.get('api/recipes')
+      AppState.recipe = res.data.data
     } catch (err) {
       logger.error('Error Error Error???', err)
     }
@@ -14,7 +14,7 @@ class RecipeService {
 
   async create(recipe) {
     try {
-      const res = await api.post('/recipes', recipe)
+      const res = await api.post('api/recipes', recipe)
       AppState.recipe.push(res.data)
     } catch (err) {
       logger.error('Error Error Error???', err)
@@ -22,4 +22,4 @@ class RecipeService {
   }
 }
 
-export const accountService = new RecipeService()
+export const recipeService = new RecipeService()

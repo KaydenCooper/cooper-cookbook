@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const IngredientSchema = new Schema({
   _id: { type: String },
-  ingredient: { type: String, required: true }
+  ingredient: { type: String, required: false }
 },
 { timestamps: true, toJSON: { virtuals: true } })
 
