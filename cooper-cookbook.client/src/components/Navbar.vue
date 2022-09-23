@@ -18,11 +18,6 @@
             Home
           </router-link>
         </li>
-        <li class="nav-item">
-          <router-link :to="{ name: 'About' }" class="nav-link">
-            About
-          </router-link>
-        </li>
       </ul>
       <form class="form-inline mr-4">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">

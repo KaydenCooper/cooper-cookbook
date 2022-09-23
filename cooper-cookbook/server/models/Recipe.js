@@ -16,11 +16,10 @@ const CommentSchema = new Schema({
 
 export const RecipeSchema = new Schema(
   {
-
     title: { type: String, required: true },
     creatorId: { type: String, ref: 'Account', required: false },
     createdBy: { type: String, required: true },
-    ingredients: [{ type: IngredientSchema }],
+    ingredients: { type: String, required: false },
     directions: { type: String, required: false },
     category: { type: String, required: true },
     comments: [{ type: CommentSchema }]

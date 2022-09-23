@@ -2,7 +2,7 @@
   <header>
     <Navbar />
   </header>
-  <main>
+  <main class="justify-content-center">
     <router-view />
   </main>
 </template>

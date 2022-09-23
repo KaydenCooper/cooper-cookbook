@@ -3,6 +3,15 @@ import { logger } from '../utils/Logger'
 import { api } from './AxiosService'
 
 class RecipeService {
+  async getbyId(id) {
+    try {
+      const res = await api.get(`api/recipes/${id}`)
+      AppState.recipe = res.data.data
+    } catch (err) {
+      logger.err('WRONG', err)
+    }
+  }
+
   async getAll() {
     try {
       const res = await api.get('api/recipes')

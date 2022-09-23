@@ -1,6 +1,6 @@
 <template>
   <div class="home row justify-content-center px-0 mx-0 table-bg">
-    <div class="col-12 mt-md-3 mt-4 ">
+    <div class="col-12 mt-md-3 mt-4 mr-4 ">
       <button class="col-md-3 btn btn-dark btn-lg m-3 p-4 shadow"
               type="button"
               data-toggle="collapse"
@@ -87,7 +87,7 @@
 import Categories from '../components/Categories.vue'
 import { recipeService } from '../services/RecipeService.js'
 import { AppState } from '../AppState'
-import { computed, onMounted, reactive } from 'vue'
+import { ref, watchEffect, computed, onMounted, reactive } from 'vue'
 import { router } from '../router.js'
 export default {
   name: 'Home',
@@ -98,7 +98,7 @@ export default {
         title: '',
         createdBy: '',
         category: '',
-        ingredients: {},
+        ingredients: '',
         directions: ''
 
       }
@@ -126,8 +126,9 @@ export default {
           console.error('You messed up', error)
         }
       },
+
       allRecipes() {
-        router.push('/recipesPage')
+        router.push({ name: 'RecipesPage', params: { categoryName: 'all' } })
       }
 
     }
