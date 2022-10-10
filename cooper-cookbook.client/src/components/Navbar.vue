@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light table-bg shadow">
     <button
       class="navbar-toggler"
       type="button"
@@ -14,20 +14,20 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
+          <router-link :to="{ name: 'Home' }" class="nav-link text-dark navTitle card bg-light px-4 my-2 py-0 border border-dark">
+            Cooper Family Cookbook
           </router-link>
         </li>
       </ul>
       <form class="form-inline mr-4">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <input class="form-control border border-dark" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">
           Search
         </button>
       </form>
       <span class="navbar-text">
         <button
-          class="btn btn-outline-primary text-uppercase"
+          class="btn btn-dark text-uppercase"
           @click="login"
           v-if="!user.isAuthenticated"
         >
@@ -35,7 +35,7 @@
         </button>
 
         <button
-          class="btn btn-outline-primary text-uppercase"
+          class="btn btn-dark text-uppercase"
           @click="logout"
           v-else
         >
@@ -70,6 +70,10 @@ export default {
 </script>
 
 <style scoped>
+.navTitle{
+  font-family: 'Amatic SC', cursive;
+  font-size:3rem;
+}
 .dropdown-menu {
   user-select: none;
   display: block;

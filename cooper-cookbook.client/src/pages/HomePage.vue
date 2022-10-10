@@ -1,43 +1,25 @@
 <template>
   <div class="home row justify-content-center px-0 mx-0 table-bg">
-    <div class="col-12 mt-md-3 mt-4 mr-4 ">
-      <button class="col-md-3 btn btn-dark btn-lg m-3 p-4 shadow"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseAdd"
-              aria-expanded="false"
-              aria-controls="collapseAdd"
-      >
-        + Add Recipe
-      </button>
-      <button class=" col-md-3 btn btn-dark btn-lg m-3 p-4  shadow"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseCategory"
-              aria-expanded="false"
-              aria-controls="collapseCategory"
-      >
-        Categories
-      </button>
-      <button @click="allRecipes" class="col-md-3 btn btn-dark btn-lg m-3 p-4  shadow">
-        All Recipes
-      </button>
+    <div class="col-12 title  bg-image shadow px-0 py-5  mb-5">
+      <h1 class=" mb-0 my-md-5 py-md-5 text-light title-bg mr-4 mr-md-0">
+        <button class="col-md-4 btn bg-tan btn-lg m-3 p-3 shadow"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseAdd"
+                aria-expanded="false"
+                aria-controls="collapseAdd"
+        >
+          <h2>+ Add New Recipe</h2>
+        </button>
+
+        <button @click="allRecipes" class="col-md-4 btn bg-tan btn-lg m-3 p-3  shadow">
+          <h2> All Recipes A-Z </h2>
+        </button>
+      </h1>
     </div>
-    <div class="col-12 title collapse" id="collapseCategory">
-      <p class="mb-0">
-        <u>CATEGORIES</u>
-      </p>
-    </div>
-    <categories
-      class="collapse"
-      id="collapseCategory"
-      v-for="category in categories"
-      :key="category.id"
-      :category="category"
-    />
     <form
       @submit.prevent="createRecipe"
-      class="collapse col-10 col-md-6 card shadow bg-dark p-4 m-3"
+      class="collapse col-10 col-md-6 card shadow bg-tan p-4 m-3 border border-dark"
       id="collapseAdd"
     >
       <div class="form-group">
@@ -70,16 +52,21 @@
         <label for="inputDirections">Directions</label>
         <textarea v-model="state.newRecipe.directions" class="form-control" id="inputDirections" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" data-toggle="collapse" data-target="#collapseAdd">
         Submit Recipe
       </button>
     </form>
-    <div class="col-12 title  bg-image shadow px-0 py-5 py-md-4 mb-5 mb-md-1">
-      <h1 class=" mb-0 my-md-5 py-md-5 text-light title-bg">
-        Cooper Family Cookbook <br>
-        - Est. 1942 -
-      </h1>
+    <div class="col-10 bg-tan border border-dark shadow card title ">
+      <p class="mb-0 ">
+        <u>-CATEGORIES-</u>
+      </p>
     </div>
+    <categories
+
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+    />
   </div>
 </template>
 
@@ -139,7 +126,10 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+.bg-tan{
+      background-color: rgb(228, 228, 225);
 
+}
 .title-bg{
     background-color: rgba(36, 36, 36, 0.568);
     border-radius: 0%;
@@ -147,7 +137,7 @@ export default {
 
 .title, h1{
   font-family: 'Amatic SC', cursive;
-  font-size: 100px;
+  font-size: 90px;
 }
 .home{
   text-align: center;

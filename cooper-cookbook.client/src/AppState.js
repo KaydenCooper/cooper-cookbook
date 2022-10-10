@@ -80,7 +80,7 @@ export const AppState = reactive({
     },
     {
       url: '../src/assets/img/dips.jpg',
-      name: 'DIPS | SAUCES| DRESSINGS'
+      name: 'DIPS | SAUCES | DRESSINGS'
     },
     {
       url: '../src/assets/img/pastries.jpg',

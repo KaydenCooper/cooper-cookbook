@@ -1,20 +1,20 @@
 <template>
-  <div class="modal" tabindex="-1">
+  <div class="modal border border-dark" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">
-            <slot name="modal-title"></slot>
-          </h5>
+        <div class="modal-header justify-content-center table-bg p-4">
+          <slot name="modal-header" />
+        </div>
+        <div class="modal-body table-bg pt-0 px-4 pb-4">
+          <slot name="modal-body" />
           <button
             type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
+            class="btn btn-light col-12 px-4 mt-4 shadow "
+            data-dismiss="modal"
             aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <slot name="modal-body" />
+          >
+            CLOSE
+          </button>
         </div>
       </div>
     </div>

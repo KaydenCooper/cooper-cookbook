@@ -3,7 +3,7 @@
   <div>
     <div
       type="button"
-      class="recipe rounded col-md-4 col-12 m-3 p-4 card bg-dark shadow text-center"
+      class="recipe rounded col-12 m-3 mx-md-0 p-4 card bg-tan border border-dark  shadow text-center"
       data-toggle="modal"
       :data-target="'#recipeModal-' + recipe.id"
     >
@@ -13,27 +13,36 @@
     </div>
 
     <RecipeModal :id="'recipeModal-'+ recipe.id">
+      <template #modal-header>
+        <ul class="list-unstyled mb-0 card bg-light col-12 shadow px-5">
+          <li>
+            <h2 class=" pt-2 px-2">
+              {{ recipe.title }}
+            </h2>
+          </li>
+          <p class=" mb-2 mx-2">
+            Created By: {{ recipe.createdBy }}
+          </p>
+        </ul>
+      </template>
       <template #modal-body>
         <div>
-          <div class="card card-body text-dark p-1">
-            <h5 class="mb-3">
-              {{ recipe.title }}
-            </h5>
+          <div class="card card-body text-dark p-1  shadow ">
             <ul class="list-group">
               <li class="list-group-item p-1">
-                <h5><u>INGREDIENTS:</u></h5>
-                <p>{{ recipe.ingredients }}</p>
-              </li>
-              <li class="list-group-item p-1">
-                <h5><u>DIRECTIONS:</u></h5>
-                <p>{{ recipe.directions }}</p>
-              </li>
-              <li class="list-group-item p-1">
-                <p class="mb-0 font-weight-bold">
-                  <u>CREATED BY:</u>
+                <p class="font-weight-bold">
+                  <u>INGREDIENTS:</u>
                 </p>
-                <p class="mb-0">
-                  {{ recipe.createdBy }}
+                <p class="inputIngredient">
+                  {{ recipe.ingredients }}
+                </p>
+              </li>
+              <li class="list-group-item p-1">
+                <p class="font-weight-bold">
+                  <u>DIRECTIONS:</u>
+                </p>
+                <p class="inputDirections">
+                  {{ recipe.directions }}
                 </p>
               </li>
             </ul>
@@ -61,6 +70,12 @@ export default {
 </script>
 
 <style >
+.inputIngredient{
+  white-space: pre-wrap;
+}
+.inputDirections{
+  white-space: pre-wrap;
+}
 .card{
     border: none;
 }

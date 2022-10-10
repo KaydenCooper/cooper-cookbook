@@ -1,7 +1,11 @@
 <template>
-  <div class="recipesPage row container-fluid justify-content-center text-center table-bg">
-    <div class="col-12 mt-2">
-      <h1><u>ALL RECIPES</u></h1>
+  <div class="recipesPage row container-fluid justify-content-center  text-center table-bg  px-md-0">
+    <div class="col-12 mt-2 d-flex justify-content-center align-items-center">
+      <h1 class="card shadow bg-tan px-5 py-2 mt-4 border border-dark">
+        <u>- Click The Recipe for Details -</u>
+      </h1>
+    </div>
+    <div class="col-md-8 col-12 pr-5 pr-sm-0">
       <recipe
         v-for="recipe in recipes"
         :key="recipe.id"
