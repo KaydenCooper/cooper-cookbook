@@ -11,23 +11,23 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
+    <div class="collapse navbar-collapse text-center" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link text-dark navTitle card bg-light px-4 my-2 py-0 border border-dark">
+          <router-link :to="{ name: 'Home' }" class="nav-link text-dark navTitle card cuttingboard-bg px-4 my-2 py-0 shadow text-center">
             Cooper Family Cookbook
           </router-link>
         </li>
       </ul>
-      <form class="form-inline mr-4">
-        <input class="form-control border border-dark" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">
+      <form class="form-inline mr-sm-4 justify-content-center">
+        <input class="form-control border border-dark border-radius" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn cuttingboard-bg my-2 my-sm-0 border border-rounded border-dark" type="submit">
           Search
         </button>
       </form>
       <span class="navbar-text">
         <button
-          class="btn btn-dark text-uppercase"
+          class="btn  cuttingboard-bg border border-dark text-uppercase"
           @click="login"
           v-if="!user.isAuthenticated"
         >
@@ -35,7 +35,7 @@
         </button>
 
         <button
-          class="btn btn-dark text-uppercase"
+          class="btn  border border-dark cuttingboard-bg text-uppercase"
           @click="logout"
           v-else
         >

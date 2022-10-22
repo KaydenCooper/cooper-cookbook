@@ -1,11 +1,16 @@
 <template>
-  <div class="recipesPage row container-fluid justify-content-center  text-center table-bg  px-md-0">
-    <div class="col-12 mt-2 d-flex justify-content-center align-items-center">
-      <h1 class="card shadow bg-tan px-5 py-2 mt-4 border border-dark">
-        <u>- Click The Recipe for Details -</u>
-      </h1>
+  <div class="recipesPage row container-fluid justify-content-center  text-center cuttingboard-bg  px-md-0">
+    <div class="col-md-2 col-12 justify-content-center">
+      <router-link :to="{ name: 'Home' }" class="nav-link border border-dark font-small mt-4 text-dark navTitle card table-bg px-4 my-2 py-0 shadow text-center">
+        Go Back
+      </router-link>
     </div>
-    <div class="col-md-8 col-12 pr-5 pr-sm-0">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <h2 class="card shadow border border-dark table-bg px-5 py-2 mt-4  font">
+        <u>- Click The Recipe for Details -</u>
+      </h2>
+    </div>
+    <div class="col-md-8 col-12 pr-3 pr-sm-5">
       <recipe
         v-for="recipe in recipes"
         :key="recipe.id"
