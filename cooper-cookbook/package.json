@@ -26,9 +26,9 @@
     "node": "^14.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
+    "babel/eslint-parser": "^7.19.1",
     "bootstrap": "^4.6.0",
-    "eslint": "^7.26.0",
+    "eslint": "^8.26.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-node": "^11.1.0",
