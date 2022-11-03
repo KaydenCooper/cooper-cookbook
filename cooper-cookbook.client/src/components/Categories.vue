@@ -3,7 +3,7 @@
   <div class="categories rounded col-5 col-md-2 mx-2 my-4 px-0 card shadow">
     <router-link :to="{name:'RecipesPage', params:{categoryName: category.name}}">
       <div class="embed-responsive embed-responsive-4by3  d-flex justify-content-center align-items-end">
-        <img :src="imageUrl" class="card-img-top embed-responsive-item" alt="image">
+        <img :src="category.url" class="card-img-top embed-responsive-item" alt="image">
         <div class=" col-12 p-1 card card-background">
           <h5 class="text-light my-2">
             {{ category.name }}
@@ -14,17 +14,14 @@
   </div>
 </template>
 
-
-
 <script>
-import { AppState } from '../AppState'
+
 export default {
   name: 'Categories',
   props: ['category'],
   setup() {
-    const imageUrl = new URL(`../src/${AppState.categories.url}`, import.meta.url).href
     return {
-    imageUrl
+
     }
   },
   computed: {},
