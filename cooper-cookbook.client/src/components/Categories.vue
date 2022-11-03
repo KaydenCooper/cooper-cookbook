@@ -17,11 +17,12 @@
 
 
 <script>
+import { AppState } from '../AppState'
 export default {
   name: 'Categories',
   props: ['category'],
   setup() {
-    const imageUrl = new URL(category.url, import.meta.url).href
+    const imageUrl = new URL(AppState.categories.url, import.meta.url).href
     return {
     imageUrl
     }
