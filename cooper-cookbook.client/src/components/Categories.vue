@@ -17,13 +17,13 @@
 
 
 <script>
-const imageUrl = new URL(category.url, import.meta.url).href
 export default {
   name: 'Categories',
   props: ['category'],
   setup() {
+    const imageUrl = new URL(category.url, import.meta.url).href
     return {
-
+    imageUrl
     }
   },
   computed: {},
