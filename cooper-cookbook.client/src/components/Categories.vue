@@ -3,7 +3,7 @@
   <div class="categories rounded col-5 col-md-2 mx-2 my-4 px-0 card shadow">
     <router-link :to="{name:'RecipesPage', params:{categoryName: category.name}}">
       <div class="embed-responsive embed-responsive-4by3  d-flex justify-content-center align-items-end">
-        <img :src="category.url" class="card-img-top embed-responsive-item" alt="image">
+        <img :src="imageUrl" class="card-img-top embed-responsive-item" alt="image">
         <div class=" col-12 p-1 card card-background">
           <h5 class="text-light my-2">
             {{ category.name }}
@@ -14,8 +14,10 @@
   </div>
 </template>
 
-<script>
 
+
+<script>
+const imageUrl = new URL(category.url, import.meta.url).href
 export default {
   name: 'Categories',
   props: ['category'],
