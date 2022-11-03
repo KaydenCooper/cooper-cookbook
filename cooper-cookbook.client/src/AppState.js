@@ -1,4 +1,25 @@
 import { reactive } from 'vue'
+import appUrl from '../src/assets/img/appetizer.jpg'
+import breadUrl from '../src/assets/img/bread.jpg'
+import muffinUrl from '../src/assets/img/muffin.jpg'
+import pancakeUrl from '../src/assets/img/pancake.jpg'
+import rollsUrl from '../src/assets/img/rolls.jpg'
+import sconesUrl from '../src/assets/img/scones.jpg'
+import cakeUrl from '../src/assets/img/cake.jpg'
+import candyUrl from '../src/assets/img/candy.jpg'
+import snacksUrl from '../src/assets/img/snacks.jpg'
+import canningUrl from '../src/assets/img/canning.jpg'
+import cookiesUrl from '../src/assets/img/cookies.jpg'
+import browniesUrl from '../src/assets/img/brownies.jpg'
+import frostingUrl from '../src/assets/img/frosting.jpg'
+import mainUrl from '../src/assets/img/main.jpg'
+import sideUrl from '../src/assets/img/side.jpg'
+import pieUrl from '../src/assets/img/pie.jpg'
+import soupUrl from '../src/assets/img/soup.jpg'
+import dipsUrl from '../src/assets/img/dips.jpg'
+import pastriesUrl from '../src/assets/img/pastries.jpg'
+import miscUrl from '../src/assets/img/misc.jpg'
+
 // NOTE AppState is a reactive object to contain app level data
 export const AppState = reactive({
   user: [],
@@ -6,88 +27,88 @@ export const AppState = reactive({
   recipe: [],
   categories: [
     {
-      url: url('../src/assets/img/appetizer.jpg'),
+      url: appUrl,
       name: 'APPETIZERS'
     },
     {
-      url: url('../src/assets/img/bread.jpg'),
+      url: breadUrl,
       name: 'BREAD'
     },
     {
-      url: url('../src/assets/img/muffin.jpg'),
+      url: muffinUrl,
       name: 'MUFFINS'
     },
     {
-      url: url('../src/assets/img/pancake.jpg'),
+      url: pancakeUrl,
       name: 'PANCAKES'
     },
     {
-      url: url('../src/assets/img/rolls.jpg'),
+      url: rollsUrl,
       name: 'ROLLS'
     },
     {
-      url: url('../src/assets/img/scones.jpg'),
+      url: sconesUrl,
       name: 'SCONES'
     },
     {
-      url: url('../src/assets/img/cake.jpg'),
+      url: cakeUrl,
       name: 'CAKES'
     },
     {
-      url: url('../src/assets/img/candy.jpg'),
+      url: candyUrl,
       name: 'CANDY'
     },
     {
-      url: url('../src/assets/img/snacks.jpg'),
+      url: snacksUrl,
       name: 'SNACKS'
     },
     {
-      url: url('../src/assets/img/canning.jpg'),
+      url: canningUrl,
       name: 'CANNING'
     },
     {
-      url: url('../src/assets/img/casserole.jpg'),
+      url: casseroleUrl,
       name: 'CASSEROLES'
     },
     {
-      url: url('../src/assets/img/cookies.jpg'),
+      url: cookiesUrl,
       name: 'COOKIES'
     },
     {
-      url: url('../src/assets/img/brownies.jpg'),
+      url: browniesUrl,
       name: 'BROWNIES'
     },
     {
-      url: url('../src/assets/img/frosting.jpg'),
+      url: frostingUrl,
       name: 'FROSTINGS'
     },
     {
-      url: url('../src/assets/img/main.jpg'),
+      url: mainUrl,
       name: 'MAIN DISHES'
     },
     {
-      url: url('../src/assets/img/side.jpg'),
+      url: sideUrl,
       name: 'SIDE DISHES'
     },
 
     {
-      url: url('../src/assets/img/pie.jpg'),
+      url: pieUrl,
       name: 'PIES & CRUSTS'
     },
     {
-      url: url('../src/assets/img/soup.jpg'),
+      url: soupUrl,
       name: 'SOUPS & SALADS'
     },
     {
-      url: url('../src/assets/img/dips.jpg'),
+      url: dipsUrl,
       name: 'DIPS | SAUCES | DRESSINGS'
     },
     {
-      url: url('../src/assets/img/pastries.jpg'),
+      url: pastriesUrl,
       name: 'DESSERTS | PASTRIES | PUDDINGS'
     },
     {
-      url: url('../src/assets/img/misc.jpg'),
+      url: miscUrl,
       name: 'MISC'
     }
 
