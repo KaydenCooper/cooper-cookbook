@@ -7,7 +7,7 @@ import { api } from './AxiosService'
 import { recipeService } from './RecipeService'
 import { socketService } from './SocketService'
 
-// export const AuthService = initialize({
+export const AuthService = initialize({
 //   domain,
 //   clientId,
 //   audience,
@@ -29,7 +29,7 @@ import { socketService } from './SocketService'
 //   socketService.authenticate(AuthService.bearer)
 //   //await recipeService.getAll()
 //   // NOTE if there is something you want to do once the user is authenticated, place that here
-// })
+})
 
 // async function refreshAuthToken(config) {
 //   if (!AuthService.isAuthenticated) { return config }
@@ -44,4 +44,4 @@ import { socketService } from './SocketService'
 //     socketService.authenticate(AuthService.bearer)
 //   }
 //   return config
-// }
+//}
