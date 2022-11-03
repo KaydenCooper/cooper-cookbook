@@ -19,6 +19,7 @@ import soupUrl from '../src/assets/img/soup.jpg'
 import dipsUrl from '../src/assets/img/dips.jpg'
 import pastriesUrl from '../src/assets/img/pastries.jpg'
 import miscUrl from '../src/assets/img/misc.jpg'
+import casseroleUrl from '../src/assets/img/casserole.jpg'
 
 // NOTE AppState is a reactive object to contain app level data
 export const AppState = reactive({
