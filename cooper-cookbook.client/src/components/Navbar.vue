@@ -25,7 +25,7 @@
           Search
         </button>
       </form>
-      <span class="navbar-text">
+      <!-- <span class="navbar-text">
         <button
           class="btn  cuttingboard-bg border border-dark text-uppercase"
           @click="login"
@@ -41,7 +41,7 @@
         >
           Logout
         </button>
-      </span>
+      </span> -->
     </div>
   </nav>
 </template>
