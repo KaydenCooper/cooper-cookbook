@@ -15,7 +15,7 @@ export class RecipesController extends BaseController {
       // .put('/:id/comments/:commentId', this.editComments)
       .delete('/:id', this.delete)
       .delete('/:id/comments/:commentId', this.deleteComment)
-      //.use(Auth0Provider.getAuthorizedUserInfo)
+      .use(Auth0Provider.getAuthorizedUserInfo)
   }
 
   async deleteComment(req, res, next) {

@@ -6,7 +6,7 @@ export class AccountController extends BaseController {
   constructor() {
     super('account')
     this.router
-      //.use(Auth0Provider.getAuthorizedUserInfo)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
   }
 
