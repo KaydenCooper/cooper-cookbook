@@ -22,7 +22,7 @@ export default {
   name: 'Categories',
   props: ['category'],
   setup() {
-    const imageUrl = new URL(AppState.categories.url, import.meta.url).href
+    const imageUrl = new URL(`../src/${AppState.categories.url}`, import.meta.url).href
     return {
     imageUrl
     }
