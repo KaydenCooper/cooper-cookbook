@@ -14,9 +14,7 @@
     <div class="collapse navbar-collapse text-center" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link text-dark navTitle card cuttingboard-bg px-4 my-2 py-0 shadow text-center">
-            Cooper Family Cookbook
-          </router-link>
+          
         </li>
       </ul>
       <form class="form-inline mr-sm-4 justify-content-center">

@@ -1,12 +1,19 @@
 <template>
-  <div class="recipesPage row container-fluid justify-content-center  text-center cuttingboard-bg  px-md-0">
-    <div class="col-md-2 col-12 justify-content-center">
-      <router-link :to="{ name: 'Home' }" class="nav-link border border-dark font-small mt-4 text-dark navTitle card table-bg px-4 my-2 py-0 shadow text-center">
-        Go Back
-      </router-link>
+  <div class="recipesPage row container-fluid justify-content-center  text-center table-bg  px-0">
+      <div class="col-12 title  bg-image shadow px-0 py-5  mb-5">
+      <h1 class=" mb-0 my-md-5 py-md-4 text-light title-bg ">
+       
+          <router-link :to="{ name: 'Home' }" class="text-light  cooper">
+            Cooper Family Cookbook
+          </router-link>
+        
+        
+        
+      </h1>
+      
     </div>
     <div class="col-12 d-flex justify-content-center align-items-center">
-      <h2 class="card shadow border border-dark table-bg px-5 py-2 mt-4  font">
+      <h2 class="card shadow border border-dark black-bg px-5 py-2 mt-4  font">
         <u>- Click The Recipe for Details -</u>
       </h2>
     </div>
@@ -43,9 +50,9 @@ export default {
       route,
       recipes: computed(() => {
         if (route.params.categoryName === 'all') {
-          return AppState.recipe
+          return AppState.recipe.sort((a, b) => a.title.localeCompare(b.title))
         } else {
-          return AppState.recipe.filter(r => r.category === route.params.categoryName)
+          return AppState.recipe.filter(r => r.category === route.params.categoryName).sort((a, b) => a.title.localeCompare(b.title))
         }
       })
     }

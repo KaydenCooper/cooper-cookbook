@@ -3,7 +3,7 @@
   <div>
     <div
       type="button"
-      class="recipe rounded col-12 my-4 mr-md-5 p-4  card table-bg border border-dark  shadow text-center"
+      class="recipe rounded col-12 my-4 mr-md-5 p-4  card black-bg border border-dark  shadow text-center"
       data-toggle="modal"
       :data-target="'#recipeModal-' + recipe.id"
     >
@@ -14,7 +14,7 @@
 
     <RecipeModal :id="'recipeModal-'+ recipe.id">
       <template #modal-header>
-        <ul class="list-unstyled mb-0 card table-bg col-12 shadow px-5 font-small">
+        <ul class="list-unstyled mb-0 card bg-light col-12 shadow px-5 font-small">
           <li>
             <h1 class=" pt-2 px-2">
               {{ recipe.title }}
@@ -27,7 +27,7 @@
       </template>
       <template #modal-body>
         <div>
-          <div class="card card-body table-bg text-dark p-1  shadow">
+          <div class="card card-body bg-light text-dark p-1  shadow">
             <ul class="list-group">
               <li class="list-group-item p-1">
                 <p class="font-weight-bold">
