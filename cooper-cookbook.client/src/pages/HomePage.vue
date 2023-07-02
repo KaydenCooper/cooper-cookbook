@@ -22,7 +22,7 @@
           <h2>+ Add New Recipe</h2>
         </button>
 
-    <button class="col-md-3 btn black-bg btn-lg mb-5 mx-3 font p-3 shadow border border-dark"
+    <!-- <button class="col-md-3 btn black-bg btn-lg mb-5 mx-3 font p-3 shadow border border-dark"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseSearch"
@@ -30,7 +30,7 @@
                 aria-controls="collapseAdd"
         >
           <h2>Search</h2>
-        </button>    
+        </button>     -->
 
         <button @click="allRecipes" class="col-md-3 btn black-bg font btn-lg mb-5 mx-3 p-3  shadow border border-dark">
           <h2> All Recipes A-Z </h2>
@@ -81,8 +81,9 @@
       class=" collapse  card shadow black-bg p-4 m-3 mb-5 border border-dark"
       id="collapseSearch"
       data-parent="#parent"
+      @submit.prevent="search"
     >
-     <input class="form-control border border-dark border-radius mb-2" type="search" placeholder="Search Recipe....." aria-label="Search">
+     <input class="form-control border border-dark border-radius mb-2" v-model="state.searchTerm" type="search" placeholder="Search Recipe....." aria-label="Search">
       <button type="submit" class="btn btn-primary border border-dark" data-toggle="collapse" data-target="#collapseSearch">
         Search
       </button>
@@ -112,6 +113,8 @@ export default {
   name: 'Home',
   setup() {
     const state = reactive({
+
+      searchTerm: '',
 
       newRecipe: {
         title: '',
@@ -148,6 +151,14 @@ export default {
 
       allRecipes() {
         router.push({ name: 'RecipesPage', params: { categoryName: 'all' } })
+      },
+
+      async search() {
+        try {
+          let response = recipeService.search(state.searchTerm)
+        } catch (error) {
+          console.error('boo', error)
+        }
       }
 
     }

@@ -21,6 +21,16 @@ class RecipeService {
     }
   }
 
+  async search(searchTerm) {
+    try {
+      const res = await api.get(`api/recipes/search/${searchTerm}`)
+      console.log('Search Response', res)
+      AppState.recipe = res.data.data
+    } catch (error) {
+      logger.error('error', error)
+    }
+  }
+
   async create(recipe) {
     try {
       const res = await api.post('api/recipes', recipe)

@@ -38,12 +38,12 @@ export default {
   setup() {
     const route = useRoute()
     const state = reactive({
-      // recipes: computed(() => AppState.recipe)
+      recipes: computed(() => AppState.recipe)
 
     })
-    // onMounted(() => {
-    //   recipeService.getAll()
-    // })
+    onMounted(() => {
+      recipeService.getAll()
+    })
     return {
       state,
       AppState,

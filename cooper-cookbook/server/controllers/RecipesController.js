@@ -9,6 +9,7 @@ export class RecipesController extends BaseController {
       .get('', this.getAll)
       // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
       .get('/:id', this.getRecipe)
+      .get('/search/:searchTerm', this.getByName)
       .post('', this.create)
       .post('/:id/comments', this.addComment)
       .put('/:id', this.edit)
@@ -51,6 +52,14 @@ export class RecipesController extends BaseController {
     try {
       const recipe = await recipesService.findById(req.params.id)
       res.send({ data: recipe, message: 'got the recipe' })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+   async getByName(req, res, next) {
+    try {
+      res.send({ data: await recipesService.find({title: req.params.searchTerm})})
     } catch (error) {
       next(error)
     }
