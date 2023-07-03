@@ -12,7 +12,7 @@
       </h1>
       
     </div>
-    <button class="col-md-3 btn black-bg btn-lg mb-5 mx-3 font p-3 shadow border border-dark"
+    <button class="col-md-5 btn black-bg btn-lg mb-5 mx-3 font p-3 shadow border border-dark"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseAdd"
@@ -32,13 +32,13 @@
           <h2>Search</h2>
         </button>     -->
 
-        <button @click="allRecipes" class="col-md-3 btn black-bg font btn-lg mb-5 mx-3 p-3  shadow border border-dark">
+        <button @click="allRecipes" class="col-md-5 btn black-bg font btn-lg mb-5 mx-3 p-3  shadow border border-dark">
           <h2> All Recipes A-Z </h2>
         </button>
-  <div id="parent" class="col-10 col-md-6">
+  <div id="parent" class="col-10 col-md-6 px-0">
     <form
       @submit.prevent="createRecipe"
-      class=" collapse card shadow black-bg p-4 m-3 border border-dark"
+      class=" collapse card shadow black-bg p-3 p-md-4 mb-4 border border-dark"
       id="collapseAdd"
       data-parent="#parent"
     >
@@ -89,7 +89,7 @@
       </button>
     </form>
     </div>
-    <div class="col-10 black-bg shadow card title border border-dark ">
+    <div class="col-11 black-bg shadow card title border border-dark ">
       <p class="mb-0 ">
         <u>-CATEGORIES-</u>
       </p>
@@ -204,7 +204,7 @@ export default {
 
 .title{
   font-family: 'Amatic SC', cursive;
-  font-size: 90px;
+  font-size: 50px;
 }
 .home{
   text-align: center;
