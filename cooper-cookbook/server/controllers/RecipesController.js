@@ -40,7 +40,7 @@ export class RecipesController extends BaseController {
   async create(req, res, next) {
     try {
       // NOTE NEVER TRUST THE CLIENT TO ADD THE CREATOR ID
-      req.body.creatorId = req.account.id
+      // req.body.creatorId = req.account.id
       const data = await recipesService.create(req.body)
       res.send(data)
     } catch (error) {
